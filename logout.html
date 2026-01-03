@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">EmployeePortal</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="leave.html">Apply Leave</a></li>
+      <li><a href="payroll.html">Payroll</a></li>
+      <li><a href="attendance.html">Attendance</a></li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+  <h1>Logout</h1>
+
+  <div class="card" style="text-align:center;">
+    <p>Are you sure you want to logout?</p>
+
+    <button class="btn" onclick="logout()">Yes, Logout</button>
+    <button class="btn" style="background:#e5e7eb;" onclick="cancel()">Cancel</button>
+  </div>
+</div>
+
+<script>
+function logout() {
+  alert("Logged out successfully 👋");
+  window.location.href = "index.html";
+}
+
+function cancel() {
+  window.location.href = "dashboard.html";
+}
+</script>
+
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
+

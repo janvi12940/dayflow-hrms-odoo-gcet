@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">EmployeePortal</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="leave.html">Apply Leave</a></li>
+      <li><a href="payroll.html">Payroll</a></li>
+      <li><a href="attendance.html">Attendance</a></li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+  <h1>Attendance</h1>
+
+  <div class="card">
+    <h2>Summary</h2>
+    <p>Present: <strong>22</strong></p>
+    <p>Absent: <strong>2</strong></p>
+
+    <button class="btn" onclick="showDetails()">View Details</button>
+
+    <div id="details" style="display:none; margin-top:15px;">
+      <p>✔ 20 Dec – Present</p>
+      <p>✔ 19 Dec – Present</p>
+      <p>✖ 18 Dec – Absent</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function showDetails() {
+  document.getElementById("details").style.display = "block";
+}
+</script>
+
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

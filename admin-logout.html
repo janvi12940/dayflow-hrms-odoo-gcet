@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Logout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">AdminPortal</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <ul id="menu">
+      <li><a href="admin-profile.html">Profile</a></li>
+      <li><a href="leave-request.html">Apply Leave</a></li>
+      <li><a href="admin-payroll.html">Payroll</a></li>
+      <li><a href="admin-attendance.html">Attendance</a></li>
+      <li><a href="manage-employess.html">Manage Employees</a></li>
+      <li><a class="active" href="admin-logout.html">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Logout Card -->
+  <div class="container">
+    <h1>Logout</h1>
+
+    <div class="card">
+      <p>Are you sure you want to logout?</p>
+
+      <button class="btn logout-btn" onclick="logout()">
+        Yes, Logout
+      </button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+
+    function logout() {
+      // Clear login data if used
+      localStorage.clear();
+      sessionStorage.clear();
+
+      // Redirect to admin login page
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

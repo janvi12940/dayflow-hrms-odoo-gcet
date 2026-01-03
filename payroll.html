@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">EmployeePortal</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="leave.html">Apply Leave</a></li>
+      <li><a href="payroll.html">Payroll</a></li>
+      <li><a href="attendance.html">Attendance</a></li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
+  </nav>
+
+ <div class="container">
+  <h1>Payroll</h1>
+
+  <div class="card">
+    <h2>December 2025</h2>
+
+    <p>Basic Salary: ₹30,000</p>
+    <p>Bonus: ₹5,000</p>
+    <p>Deductions: ₹3,000</p>
+    <hr>
+    <p><strong>Net Pay: ₹42,000</strong></p>
+
+    <button class="btn" onclick="downloadPayslip()">Download Payslip</button>
+  </div>
+</div>
+
+<script>
+function downloadPayslip() {
+  alert("Payslip downloaded 📄 (Demo)");
+}
+</script>
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

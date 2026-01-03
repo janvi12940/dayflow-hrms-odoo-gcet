@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Manage Employees</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #eaf3ff, #f4f9ff);
+}
+
+/* NAVBAR */
+.navbar {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 20px 20px;
+}
+
+.navbar h2 {
+  color: #2ecc71;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.navbar ul li a:hover {
+  color: #2ecc71;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card h1 {
+  margin-bottom: 20px;
+}
+
+/* EMPLOYEE BOX */
+.employee-box {
+  background: linear-gradient(to right, #d9f2ff, #e8f8ff);
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.employee-list {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.employee-list span {
+  display: block;
+  font-weight: 500;
+}
+
+/* FORM */
+.form-row {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.btn {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 200px;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* RESULT */
+.result {
+  margin-top: 15px;
+  background: #ecfdf3;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #145a32;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">AdminPortal</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li><a href="admin-profile.html">Profile</a></li>
+      <li><a href="leave-request.html">Apply Leave</a></li>
+      <li><a href="admin-payroll.html">Payroll</a></li>
+      <li><a href="admin-attendance.html">Attendance</a></li>
+      <li><a href="manage-employess.html">Manage Employees</a></li>
+      <li><a href="admin-logout.html">Logout</a></li>
+
+    </ul>
+  </nav>
+
+<!-- MAIN -->
+<div class="container">
+  <div class="card">
+    <h1>Manage Employees</h1>
+
+    <div class="employee-box">
+
+      <h3>Employee List</h3>
+      <div class="employee-list" id="employeeList">
+        <span>EMP101 – Vrushti Patel – IT</span>
+        <span>EMP102 – Sankhavara Smith – HR</span>
+        <span>EMP103 – Vikas Kumar – Finance</span>
+      </div>
+
+      <hr style="margin:20px 0;">
+
+      <h3>Add New Employee</h3>
+
+      <div class="form-row">
+        <label>Employee ID</label>
+        <input type="text" id="empId" placeholder="EMP104">
+      </div>
+
+      <div class="form-row">
+        <label>Employee Name</label>
+        <input type="text" id="empName" placeholder="Enter name">
+      </div>
+
+      <div class="form-row">
+        <label>Department</label>
+        <select id="empDept">
+          <option>IT</option>
+          <option>HR</option>
+          <option>Finance</option>
+          <option>Marketing</option>
+        </select>
+      </div>
+
+      <button class="btn" onclick="addEmployee()">Add Employee</button>
+
+      <div id="result" class="result" style="display:none;"></div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function addEmployee() {
+  const id = document.getElementById("empId").value;
+  const name = document.getElementById("empName").value;
+  const dept = document.getElementById("empDept").value;
+  const result = document.getElementById("result");
+
+  if (id === "" || name === "") {
+    alert("Please fill all fields");
+    return;
+  }
+
+  const list = document.getElementById("employeeList");
+  const newEmp = document.createElement("span");
+  newEmp.textContent = `${id} – ${name} – ${dept}`;
+  list.appendChild(newEmp);
+
+  result.style.display = "block";
+  result.innerHTML = "✔ Employee added successfully";
+
+  document.getElementById("empId").value = "";
+  document.getElementById("empName").value = "";
+}
+</script>
+
+</body>
+</html>

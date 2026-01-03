@@ -1,0 +1,173 @@
+/* ========== Reset & Base Styles ========== */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background: linear-gradient(120deg, #f0f2f5, #dbeafe); min-height: 100vh; color: #111827; }
+
+/* ========== Navbar ========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #1f2937, #111827);
+  padding: 15px 25px;
+  color: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  flex-wrap: wrap;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.navbar .logo {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #4ade80; /* Green accent */
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.navbar ul li a::after {
+  content: '';
+  width: 0%;
+  height: 3px;
+  background: #4ade80;
+  display: block;
+  margin: auto;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+
+.navbar ul li a:hover {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  transform: translateY(-2px);
+}
+
+/* Hamburger for mobile */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #4ade80;
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    margin-top: 10px;
+  }
+  .navbar ul.active {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* ========== Page Container ========== */
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* ========== Cards for each section ========== */
+.card {
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #1f2937;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ========== Buttons ========== */
+.btn {
+  display: inline-block;
+  background: #4ade80;
+  color: #111827;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #22c55e;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ========== Forms ========== */
+input, select, textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #4ade80;
+  box-shadow: 0 0 8px rgba(74,222,128,0.3);
+}
+
+/* ========== Responsive adjustments ========== */
+@media (max-width: 768px) {
+  .container {
+    margin: 15px;
+    padding: 15px;
+  }
+  .card {
+    margin: 10px 0;
+    padding: 15px;
+  }
+}

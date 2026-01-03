@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">EmployeePortal</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="leave.html">Apply Leave</a></li>
+      <li><a href="payroll.html">Payroll</a></li>
+      <li><a href="attendance.html">Attendance</a></li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
+  </nav>
+
+  
+    <div class="container">
+  <h1>Apply Leave</h1>
+
+  <div class="card">
+    <form id="leaveForm">
+      <label>Leave Type</label>
+      <select id="leaveType">
+        <option>Casual Leave</option>
+        <option>Sick Leave</option>
+        <option>Paid Leave</option>
+      </select>
+
+      <label>From Date</label>
+      <input type="date" id="fromDate">
+
+      <label>To Date</label>
+      <input type="date" id="toDate">
+
+      <label>Reason</label>
+      <textarea id="reason"></textarea>
+
+      <button type="button" class="btn" onclick="submitLeave()">Submit Leave</button>
+    </form>
+  </div>
+</div>
+
+<script>
+function submitLeave() {
+  alert("Leave request submitted 📨\nWaiting for admin approval");
+}
+</script>
+
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

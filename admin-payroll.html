@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <nav class="navbar">
+    <div class="logo">AdminPortal</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li><a href="admin-profile.html">Profile</a></li>
+      <li><a href="leave-request.html">Apply Leave</a></li>
+      <li><a href="admin-payroll.html">Payroll</a></li>
+      <li><a href="admin-attendance.html">Attendance</a></li>
+      <li><a href="manage-employess.html">Manage Employees</a></li>
+      <li><a href="admin-logout.html">Logout</a></li>
+
+    </ul>
+  </nav>
+
+<div class="container">
+  <h1>Payroll Management</h1>
+
+  <div class="card">
+    <p>EMP101 – ₹42,000</p>
+    <p>EMP102 – ₹38,000</p>
+    <p>EMP103 – ₹45,000</p>
+
+    <button class="btn" onclick="alert('Payroll Generated')">
+      Generate Payroll
+    </button>
+  </div>
+</div>
+
+
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
